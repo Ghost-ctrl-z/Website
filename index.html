@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Girlfriend</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; 
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .highlight {
+            background-image: linear-gradient(to right, #6b46c1, #b83280);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .parallax-bg {
+            background-image: url('./images/background.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .glassmorphism {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover {
+            color: #6b46c1; 
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+
+            header nav button.hamburger {
+                display: block;
+            }
+
+            header nav ul.show {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                width: 100%;
+                z-index: 1;
+                padding: 20px;
+                text-align: center;
+            }
+
+            header nav ul.show li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white py-4 shadow-md fixed top-0 left-0 w-full z-10">
+        <div class="container mx-auto flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-gray-800"><a href="#">Find My Girlfriend</a></h1>
+            <nav>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#introduction" class="nav-link hover:text-purple-500">Introduction</a></li>
+                    <li><a href="#skills" class="nav-link hover:text-purple-500">Skills</a></li>
+                    <li><a href="#about" class="nav-link hover:text-purple-500">About Me</a></li>
+                    <li><a href="#gallery" class="nav-link hover:text-purple-500">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-purple-500">Contact</a></li>
+                </ul>
+                <button class="hamburger md:hidden focus:outline-none" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-gray-800"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector('header nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+    <section id="introduction" class="section parallax-bg">
+        <div class="container mx-auto text-center">
+            <div class="glassmorphism">
+                <img src="https://i.pinimg.com/236x/bb/aa/83/bbaa83b37f75d8538d90ce5e210ce454.jpg" alt="Profile photo" class="w-32 h-32 rounded-full mx-auto mb-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Hi, I'm Muhammad Bin Qasim!</h2>
+                <p class="text-gray-600">Looking for a wonderful girlfriend to spend my life with.  Hopefully you're here with the same genuine intentions</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills" class="section bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <i class="fas fa-shield-alt text-5xl text-cyan-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">No Drugs</h3>
+                    <p>I prioritize a healthy and responsible lifestyle.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <i class="fas fa-walking text-5xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">No Bad Habits</h3>
+                    <p>I'm committed to a clean and respectful way of life.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <i class="fas fa-heart text-5xl text-pink-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Kind & Compassionate</h3>
+                    <p>I'm always looking to help those who need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">About Me</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Values</h3>
+                    <ul class="list-disc ml-4">
+                        <li class="hover:text-purple-700">Loyalty</li>
+                        <li class="hover:text-purple-700">Compassion</li>
+                        <li class="hover:text-purple-700">Respect</li>
+                        <li class="hover:text-purple-700">Honesty</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Interests</h3>
+                    <ul class="list-disc ml-4">
+                        <li class="hover:text-purple-700">Poetry</li>
+                        <li class="hover:text-purple-700">Cricket</li>
+                        <li class="hover:text-purple-700">Movies</li>
+                        <li class="hover:text-purple-700">Learning New Skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section bg-gray-200">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">My Gallery</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/236x/ad/80/f9/ad80f9bab2522567b15edb106c2ee6b2.jpg" alt="Gallery image 1" class="w-full rounded-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/236x/a6/99/2a/a6992a55184a64b8b1e3d62ba1471150.jpg" alt="Gallery image 2" class="w-full rounded-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/236x/0f/66/17/0f66178bcb908c8dbffe132e6f4ade29.jpg" alt="Gallery image 2" class="w-full rounded-lg">
+                    <!-- Add more slides as needed -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+ <section class="contact-section py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+            <form class="flex flex-col gap-4" onsubmit="sendEmail(event)">
+                <input type="text" class="input-field" placeholder="Your Name" name="name">
+                <input type="email" class="input-field" placeholder="Your Email" required name="email">
+                <textarea class="input-field" placeholder="Your Message" name="message"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 py-4 text-white text-center mt-10">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Muhammad Bin Qasim. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="https://www.facebook.com/share/1yVqqPrG747TKYLs/" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=923007014726&text=Hey" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/_muhammad_abbasi" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        ScrollReveal().reveal('.section', { distance: '50px', duration: 1000, delay: 200, origin: 'bottom' });
+
+        gsap.from(".highlight", { duration: 1, y: -100, opacity: 0, stagger: 0.2 });
+        
+function sendEmail(event) {
+            event.preventDefault();
+
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const message = document.querySelector('textarea[name="message"]').value;
+            
+            const mailtoLink = `mailto:binqasimmuhammad62@gmail.com?subject=Message from ${name}&body=Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+            window.location.href = mailtoLink;
+            
+        }
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>
